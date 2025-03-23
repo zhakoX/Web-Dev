@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ProductDescription } from '../product-description';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CategoryComponent } from '../category/category.component';
+import { CategoryComponent } from '../product-list/product-list.component';
 import { CategoryDescription } from '../category-description';
 
 @Component({
@@ -11,7 +11,7 @@ import { CategoryDescription } from '../category-description';
   imports: [CommonModule, FormsModule, CategoryComponent],
   template:`
   <section class="results">
-    <app-category *ngFor = "let categoryDescription of categoryProducts" [categoryDescription] = "categoryDescription"> </app-category>
+    <app-product-list *ngFor = "let categoryDescription of categoryProducts" [categoryDescription] = "categoryDescription"> </app-product-list>
   </section>
   `,
   styleUrls: ['./search.component.css']

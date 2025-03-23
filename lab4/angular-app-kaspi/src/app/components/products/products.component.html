@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>List of products from Kaspi</h1>
+  <div class="product-list">
+    <div class="product-card" *ngFor="let product of products">
+      <div class="image-gallery">
+        <img [src]="product.imageUrls[0]" alt="{{ product.name }}" class="main-image">
+        <div class="main-photo">
+          <img *ngFor="let img of product.imageUrls" [src]="img" class="thumbnail">
+        </div>
+      </div>
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <p class="rating"> <strong>Rating:</strong> {{ product.rating }}</p>
+      <a [href]="product.kaspiUrl" target="_blank" class="product-link">Go to Kaspi.kz -></a>
+      <div class="buttons">
+        <button class="wp" (click)="shareOnWhatsApp(product)">Share on WhatsApp</button>
+        <button class="tg" (click)="shareOnTelegram(product)">Share on Telegram</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+h2 {
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex; /* Делаем li flex-контейнером */
+  align-items: center; /* Выравниваем элементы по вертикали по центру */
+  justify-content: space-between; /* Распределяем пространство между элементами */
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Добавим стили для span, чтобы названия не растягивались */
+li span {
+  flex-grow: 1; /* span занимает доступное пространство */
+  margin-right: 10px; /* Отступ справа от названия альбома */
+}

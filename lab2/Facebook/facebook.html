@@ -1,170 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Facebook Login</title>
     <style>
-        body {
-            background-color: #f5f6f7;
-            font-family: sans-serif;
-        }
+      body {
+        background-color: #f5f6f7;
+        font-family: sans-serif;
+      }
 
-        #container {
-            width: 980px;
-            height: 500px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
+      #container {
+        width: 980px;
+        height: 500px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
 
-        #facebook-title {
-            font-size: 28px;
-            margin-top: 100px;
-            color: #1877f2;
-        }
-        #facebook-title p {
-            color: black;
-        }
+      #facebook-title {
+        font-size: 28px;
+        margin-top: 100px;
+        color: #1877f2;
+      }
+      #facebook-title p {
+        color: black;
+      }
 
-        #login-form {
-            width: 400px;
-            background-color: white;
-            border-radius: 10px;
-            position: absolute;
-            top: 90px;
-            left: 59%;
-            border: 1px solid #ddd;
-            box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
+      #login-form {
+        width: 400px;
+        background-color: white;
+        border-radius: 10px;
+        position: absolute;
+        top: 90px;
+        left: 59%;
+        border: 1px solid #ddd;
+        box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
 
-        .input-field {
-            width: 100%;
-            height: 40px;
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            box-sizing: border-box;
-        }
+      .input-field {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        box-sizing: border-box;
+      }
 
-        .input-field::placeholder {
-            color: gray;
-        }
+      .input-field::placeholder {
+        color: gray;
+      }
 
-        #login-button, #create-account {
-            width: 100%;
-            height: 40px;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+      #login-button,
+      #create-account {
+        width: 100%;
+        height: 40px;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+      }
 
-        #login-button{
-            background-color: #1877f2;
-        }
+      #login-button {
+        background-color: #1877f2;
+      }
 
+      #create-account {
+        background-color: #42b72a;
+      }
 
-        #create-account {
-            background-color: #42b72a;
-        }
+      #forgot-password {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: #1877f2;
+        text-decoration: none;
+      }
 
+      hr {
+        margin: 20px 0;
+        border: none;
+        height: 1px;
+        background-color: #ddd;
+      }
 
-        #forgot-password {
-            display: block;
-            text-align: center;
-            margin-top: 10px;
-            color: #1877f2;
-            text-decoration: none;
-        }
+      #create-page {
+        position: absolute;
+        top: 400px;
+        left: 59%;
+      }
 
+      #create-page a {
+        color: black;
+        text-decoration: none;
+      }
 
+      #footer {
+        background-color: white;
+        padding: 20px;
+        text-align: center;
+        border-top: 1px solid #ddd;
+      }
 
-        hr {
-            margin: 20px 0;
-            border: none;
-            height: 1px;
-            background-color: #ddd;
-        }
+      #language-links {
+        margin-bottom: 10px;
+      }
 
+      #language-links a {
+        margin: 0 5px;
+        color: #333;
+        text-decoration: none;
+      }
 
+      #footer-links a {
+        margin: 0 5px;
+        color: #333;
+        text-decoration: none;
+      }
 
-        #create-page {
-            position: absolute;
-            top: 400px;
-            left: 59%
-
-        }
-
-        #create-page a {
-            color: black;
-            text-decoration: none;
-        }
-
-        #footer {
-            background-color: white;
-            padding: 20px;
-            text-align: center;
-            border-top: 1px solid #ddd;
-        }
-
-        #language-links {
-            margin-bottom: 10px;
-        }
-
-        #language-links a {
-            margin: 0 5px;
-            color: #333;
-            text-decoration: none;
-        }
-
-        #footer-links a {
-            margin: 0 5px;
-            color: #333;
-            text-decoration: none;
-        }
-
-        #meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #737373;
-        }
+      #meta {
+        margin-top: 20px;
+        font-size: 13px;
+        color: #737373;
+      }
     </style>
-</head>
-<body>
-<div id="container">
-    <div id="facebook-title">
+  </head>
+  <body>
+    <div id="container">
+      <div id="facebook-title">
         <h1>facebook</h1>
-        <p>Facebook помогает вам всегда <br> оставаться на связи и общаться со <br> своим знакомыми. </p>
-    </div>
+        <p>
+          Facebook помогает вам всегда <br />
+          оставаться на связи и общаться со <br />
+          своим знакомыми.
+        </p>
+      </div>
 
-    <div id="login-form">
-        <input type="text" class="input-field" placeholder="Электронный адрес или или номер телефона">
-        <input type="password" class="input-field" placeholder="Пароль">
+      <div id="login-form">
+        <input
+          type="text"
+          class="input-field"
+          placeholder="Электронный адрес или или номер телефона"
+        />
+        <input type="password" class="input-field" placeholder="Пароль" />
         <button id="login-button">Вход</button>
         <a href="#" id="forgot-password">Забыли пароль?</a>
-        <hr>
+        <hr />
         <button id="create-account">Создать аккаунт</button>
+      </div>
+
+      <div id="create-page">
+        <p>
+          <strong><a href="">Создать Страницу</a></strong> знаменитости,
+          музыкальной группы <br />
+          или компании
+        </p>
+      </div>
     </div>
 
-    <div id="create-page">
-        <p><strong><a href="">Создать Страницу</a></strong> знаменитости, музыкальной группы <br> или компании</p>
+    <div id="footer">
+      <div id="language-links">
+        <a href="#">English (US)</a> <a href="#">Русский</a>
+        <a href="#">Other Languages...</a>
+      </div>
+      <hr />
+      <div id="footer-links">
+        <a href="#">Sign Up</a> <a href="#">Log In</a>
+        <a href="#">Messenger</a> <a href="#">Facebook Lite</a>
+        <a href="#">Watch</a> <a href="#">Places</a> <a href="#">Games</a>
+        <a href="#">Marketplace</a> <a href="#">Meta Pay</a>
+        <a href="#">Meta Store</a> <a href="#">Meta Quest</a>
+        <a href="#">Imagine with Meta AI</a> <a href="#">Instagram</a>
+        <a href="#">Threads</a> <a href="#">Fundraisers</a>
+        <a href="#">Services</a> <a href="#">Voting Information Center</a>
+        <a href="#">Privacy Policy</a> <a href="#">Privacy Center</a>
+        <a href="#">Groups</a> <a href="#">About</a> <a href="#">Create Ad</a>
+        <a href="#">Create Page</a> <a href="#">Developers</a>
+        <a href="#">Careers</a> <a href="#">Cookies</a>
+        <a href="#">Ad Choices</a> <a href="#">Terms</a> <a href="#">Help</a>
+        <a href="#">Contact Uploading & Non-Users</a>
+      </div>
+      <div id="meta">Meta © 2024</div>
     </div>
-</div>
-
-<div id="footer">
-    <div id="language-links">
-        <a href="#">English (US)</a> <a href="#">Русский</a> <a href="#">Other Languages...</a>
-    </div>
-    <hr>
-    <div id="footer-links">
-        <a href="#">Sign Up</a> <a href="#">Log In</a> <a href="#">Messenger</a> <a href="#">Facebook Lite</a> <a href="#">Watch</a> <a href="#">Places</a> <a href="#">Games</a> <a href="#">Marketplace</a> <a href="#">Meta Pay</a> <a href="#">Meta Store</a> <a href="#">Meta Quest</a> <a href="#">Imagine with Meta AI</a> <a href="#">Instagram</a> <a href="#">Threads</a> <a href="#">Fundraisers</a> <a href="#">Services</a> <a href="#">Voting Information Center</a> <a href="#">Privacy Policy</a> <a href="#">Privacy Center</a> <a href="#">Groups</a> <a href="#">About</a> <a href="#">Create Ad</a> <a href="#">Create Page</a> <a href="#">Developers</a> <a href="#">Careers</a> <a href="#">Cookies</a> <a href="#">Ad Choices</a> <a href="#">Terms</a> <a href="#">Help</a> <a href="#">Contact Uploading & Non-Users</a>
-    </div>
-    <div id="meta">
-        Meta © 2024
-    </div>
-</div>
-</body>
+  </body>
 </html>

@@ -1,21 +1,13 @@
 import { Component } from '@angular/core';
-import { StoreComponent } from './store/store.component';
+import { ProductsComponent } from './components/products/products.component';
 
 @Component({
   selector: 'app-root',
-  imports: [StoreComponent],
+  standalone: true,
+  imports: [ProductsComponent],
   template: `
-    <main>
-      <header>
-      </header>
-      <section>
-        <app-store></app-store>
-      </section>
-    </main>
+    <app-products></app-products> 
   `,
-
-  styleUrl: './app.component.css',
-  
 })
 export class AppComponent {
   title = 'angular-app-kaspi';

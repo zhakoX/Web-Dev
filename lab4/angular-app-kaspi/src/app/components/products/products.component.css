@@ -1,0 +1,90 @@
+.container {
+  width: 90%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+}
+
+.product-card {
+  width: 300px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  text-align: center;
+}
+
+.image-gallery {
+  position: relative;
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.main-photo{
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.thumbnail {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.product-link {
+  display: block;
+  margin-top: 10px;
+  color: red;
+  font-size: large;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.product-link:hover{
+  text-decoration: underline;
+}
+.buttons {
+  margin-top: 10px;
+}
+
+.wp{
+  background-color: rgb(144, 235, 7) ;
+  color: white;
+  font-weight: 500;
+}
+
+.tg{
+  background-color: lightskyblue;
+  color: white;
+  font-weight: 500;
+}
+
+button {
+  padding: 7px 13px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: large;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.rating{
+  font-size: large;
+}
